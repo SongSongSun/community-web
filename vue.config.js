@@ -45,6 +45,11 @@ module.exports = {
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
         }
+      },
+      '/manage': {
+        target: 'http://192.168.1.135:8081',
+        ws: true,
+        changeOrigin: true
       }
     },
     after: require('./mock/mock-server.js')

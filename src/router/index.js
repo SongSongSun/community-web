@@ -78,6 +78,28 @@ export const constantRoutes = [
   },
 
   {
+    path: '/community',
+    component: Layout,
+    redirect: '/community/notice',
+    name: 'Community',
+    meta: { title: '社区管理', icon: 'example' },
+    children: [
+      {
+        path: 'notice',
+        name: 'Notice',
+        component: () => import('@/views/community/Notice'),
+        meta: { title: '公告管理', icon: 'table' }
+      },
+      {
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: 'Tree', icon: 'tree' }
+      }
+    ]
+  },
+
+  {
     path: '/form',
     component: Layout,
     children: [
