@@ -91,6 +91,18 @@ export const constantRoutes = [
         meta: { title: '公告管理', icon: 'table' }
       },
       {
+        path: 'building',
+        name: 'Building',
+        component: () => import('@/views/community/Building'),
+        meta: { title: '楼栋管理', icon: 'table' }
+      },
+      {
+        path: 'community-user',
+        name: 'CommunityUser',
+        component: () => import('@/views/community/CommunityUser'),
+        meta: { title: '社区用户管理', icon: 'table' }
+      },
+      {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),

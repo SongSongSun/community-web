@@ -11,7 +11,7 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
     >
-      <el-button :disabled="lastPageBtnDisabled" icon="el-icon-ali-right" class="first-pager pageButton" @click="toLastPage" ></el-button>
+      <el-button :disabled="lastPageBtnDisabled" icon="el-icon-ali-right" class="first-pager pageButton" @click="toLastPage" />
     </el-pagination>
     <el-pagination
       :background="background"
@@ -24,7 +24,7 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
     >
-      <el-button :disabled="firstPageBtnDisabled"  icon="el-icon-ali-left" class="last-pager pageButton" @click="toFirstPage"></el-button>
+      <el-button :disabled="firstPageBtnDisabled" icon="el-icon-ali-left" class="last-pager pageButton" @click="toFirstPage" />
     </el-pagination>
   </div>
 </template>
@@ -50,7 +50,7 @@ export default {
     pageSizes: {
       type: Array,
       default() {
-        return [10, 20, 50, 100, 200, 500]
+        return [5, 10, 20, 50, 100, 200]
       }
     },
     layout: {

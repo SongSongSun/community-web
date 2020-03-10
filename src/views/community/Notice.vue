@@ -144,7 +144,7 @@
 
 import Collapse from '@/components/Collapse'
 import Pagination from '@/components/Pagination'
-import { getList, addNotice, batchDeleteNotice } from '@/api/community.js'
+import { pageNoticeList, addNotice, batchDeleteNotice } from '@/api/community.js'
 import DateTimePicker from '@/components/Time/DateTimePicker'
 
 export default {
@@ -159,7 +159,7 @@ export default {
       listLoading: false,
       listQuery: {
         current: 1,
-        size: 20,
+        size: 10,
         startTime: null,
         endTime: null,
         title: null
@@ -193,7 +193,7 @@ export default {
     },
     fetchData() {
       this.fullscreen = true
-      getList(this.listQuery).then(response => {
+      pageNoticeList(this.listQuery).then(response => {
         this.list = response.data.records
         this.total = response.data.total
         this.fullscreen = false
@@ -219,7 +219,7 @@ export default {
         if (valid) {
           this.btnLoading = true
           addNotice(this.noticeMsg).then(response => {
-            if (response.code === '1') {
+            if (response.code === 200) {
               this.$message({
                 message: '新增成功！',
                 type: 'success'
