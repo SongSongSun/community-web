@@ -54,29 +54,6 @@ export const constantRoutes = [
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
   },
-
-  {
-    path: '/example',
-    component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
-    children: [
-      {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
   {
     path: '/community',
     component: Layout,
@@ -110,7 +87,27 @@ export const constantRoutes = [
       }
     ]
   },
-
+  {
+    path: '/system',
+    component: Layout,
+    redirect: '/system/manage',
+    name: 'System',
+    meta: { title: '系统管理', icon: 'example' },
+    children: [
+      {
+        path: 'manage',
+        name: 'Manage',
+        component: () => import('@/views/system/JobManage'),
+        meta: { title: '定时任务管理', icon: 'table' }
+      },
+      {
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: 'Tree', icon: 'tree' }
+      }
+    ]
+  },
   {
     path: '/form',
     component: Layout,

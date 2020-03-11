@@ -102,6 +102,7 @@
       width="35%"
     >
       <el-form
+        v-if="dialogConfig.visible"
         ref="noticeBox"
         :model="noticeMsg"
         status-icon
@@ -256,7 +257,7 @@ export default {
             ids.push(v.id)
           })
           batchDeleteNotice({ 'ids': ids }).then(response => {
-            if (response.code === '1') {
+            if (response.code === 200) {
               this.$message({
                 message: '删除成功！',
                 type: 'success'
