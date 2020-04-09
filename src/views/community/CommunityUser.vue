@@ -152,6 +152,11 @@
         </template>
       </el-table-column>
       <el-table-column
+        prop="roomId"
+        label="房间号"
+        width="200"
+      />
+      <el-table-column
         prop="settleFlag"
         label="居住状态"
         width="150"
@@ -274,6 +279,19 @@
           </el-select>
         </el-form-item>
         <el-form-item
+          label="房间号："
+          :rules="[{ required: true, message: '房间号不能为空',trigger: 'blur'}]"
+          prop="roomId"
+        >
+          <el-col :span="12">
+            <el-input
+              v-model="communityUserMsg.roomId"
+              :value="undefined"
+              :editable="true"
+            />
+          </el-col>
+        </el-form-item>
+        <el-form-item
           label="人员类别："
           :rules="[{ required: true, message: '人员类别不能为空',trigger: 'blur'}]"
           prop="userFlag"
@@ -354,6 +372,7 @@ export default {
         sex: undefined,
         nativePlace: undefined,
         buildingId: undefined,
+        roomId: undefined,
         userFlag: undefined,
         ownerId: undefined
       },
@@ -452,7 +471,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           this.btnLoading = true
-          this.communityUserMsg.nativePlace = this.communityUserMsg[0] + ',' + this.communityUserMsg[1]
+          this.communityUserMsg.nativePlace = this.communityUserMsg.nativePlace[0] + ',' + this.communityUserMsg.nativePlace[1]
           addCommunityUser(this.communityUserMsg).then(response => {
             if (response.code === 200) {
               this.$message({

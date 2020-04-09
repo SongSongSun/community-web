@@ -78,3 +78,48 @@ export function deleteCommunityUser(data) {
     data
   })
 }
+
+/** *******************************物业问题管理******************/
+// 分页获取物业问题
+export function pagePropertyProblemList(params) {
+  return request({
+    url: '/manage/property-problem',
+    method: 'get',
+    params
+  })
+}
+
+// 根据物业问题ID获取图片
+export function getPropertyProblemImgById(params) {
+  return request({
+    url: '/manage/property-problem/img',
+    method: 'get',
+    params
+  })
+}
+// 根据物业问题ID获取上报人信息
+export function getReportUserInfoById(params) {
+  return request({
+    url: '/manage/property-problem/user-info',
+    method: 'get',
+    params
+  })
+}
+
+// 根据物业问题ID更新问题为处理中
+export function updateStatusToHandle(params) {
+  return request({
+    url: '/manage/property-problem/handle',
+    method: 'put',
+    params
+  })
+}
+
+// 根据物业问题ID更新问题为已结束
+export function updateStatusToFinished(params) {
+  return request({
+    url: '/manage/property-problem/finish',
+    method: 'put',
+    params
+  })
+}

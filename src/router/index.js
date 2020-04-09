@@ -80,6 +80,19 @@ export const constantRoutes = [
         meta: { title: '社区用户管理', icon: 'table' }
       },
       {
+        path: 'property-problem',
+        name: 'PropertyProblem',
+        component: () => import('@/views/community/property-problem/PropertyProblem'),
+        meta: { title: '物业问题管理', icon: 'tree' }
+      },
+      {
+        path: 'property-problem-detail',
+        name: 'PropertyProblemDetail',
+        component: () => import('@/views/community/property-problem/PropertyProblemDetail'),
+        hidden: true,
+        meta: { title: '物业问题详情' }
+      },
+      {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
