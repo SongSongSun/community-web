@@ -44,3 +44,16 @@ export function updateJob(data) {
     data
   })
 }
+
+// 上传图片
+export function uploadImg(data) {
+  return request({
+    url: '/manage/upload/img',
+    method: 'post',
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    },
+    data
+  })
+}
+

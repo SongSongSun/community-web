@@ -123,3 +123,68 @@ export function updateStatusToFinished(params) {
     params
   })
 }
+
+/** *******************************活动管理******************/
+// 分页获取活动
+export function pageActivity(params) {
+  return request({
+    url: '/manage/activity',
+    method: 'get',
+    params
+  })
+}
+
+// 审核活动
+export function approveActivity(data) {
+  return request({
+    url: '/manage/activity/approve',
+    method: 'put',
+    data
+  })
+}
+/** *******************************失物招领******************/
+// 分页获取失物招领
+export function pageLostFound(params) {
+  return request({
+    url: '/manage/lost-found',
+    method: 'get',
+    params
+  })
+}
+
+// 更改失物招领显示状态
+export function updateLostFound(data) {
+  return request({
+    url: '/manage/lost-found',
+    method: 'put',
+    data
+  })
+}
+
+/** *******************************社区新闻******************/
+// 分页获取社区新闻
+export function pageCommunityNews(params) {
+  return request({
+    url: '/manage/community-news',
+    method: 'get',
+    params
+  })
+}
+
+// 创建社区新闻
+export function createCommunityNews(data) {
+  return request({
+    url: '/manage/community-news',
+    method: 'post',
+    data
+  })
+}
+
+// 更改社区新闻显示状态
+export function updateCommunityNews(data) {
+  return request({
+    url: '/manage/community-news',
+    method: 'put',
+    data
+  })
+}

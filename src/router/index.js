@@ -93,11 +93,38 @@ export const constantRoutes = [
         meta: { title: '物业问题详情' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'activity-manage',
+        name: 'ActivityManage',
+        component: () => import('@/views/community/activity/ActivityManage'),
+        meta: { title: '活动管理', icon: 'tree' }
+      },
+      {
+        path: 'lost-found-manage',
+        name: 'LostFoundManage',
+        component: () => import('@/views/community/lost-found/LostFoundManage'),
+        meta: { title: '失物招领管理', icon: 'tree' }
+      },
+      {
+        path: 'community-news-manage',
+        name: 'CommunityNewsManage',
+        component: () => import('@/views/community/community-news/CommunityNewsManage'),
+        meta: { title: '社区新闻管理', icon: 'tree' }
+      },
+      {
+        path: 'create-community-news',
+        name: 'CreateCommunityNews',
+        component: () => import('@/views/community/community-news/CreateCommunityNews'),
+        hidden: true,
+        meta: { title: '创建社区新闻', icon: 'tree' }
+      },
+      {
+        path: 'community-news-detail',
+        name: 'CommunityNewsDetail',
+        component: () => import('@/views/community/community-news/CommunityNewsDetail'),
+        hidden: true,
+        meta: { title: '社区新闻详情', icon: 'tree' }
       }
+
     ]
   },
   {
@@ -118,87 +145,6 @@ export const constantRoutes = [
         name: 'Tree',
         component: () => import('@/views/tree/index'),
         meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
-
-  {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
-    children: [
-      {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
-      },
-      {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        meta: { title: 'menu2' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
       }
     ]
   },
